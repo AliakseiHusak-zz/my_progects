@@ -1,18 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
-import AppContainer from './app/App';
-import * as serviceWorker from './serviceWorker';
-import * as reducers from './store/reducers';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+import App from './components/app';
 
-const store = createStore(combineReducers(reducers));
+const store = createStore(rootReducer);
 
-ReactDOM.render(
+render(
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>,
   document.getElementById('root'),
 );
-
-serviceWorker.unregister();
