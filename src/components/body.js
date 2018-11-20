@@ -1,16 +1,17 @@
 import React from 'react';
 import People from './people';
+import Facts from './facts';
+import Voting from './voting';
 
 const Body = ({ store }) => {
-  console.log(store);
   if (store.view === 'people') {
     return <People />;
   } else if (store.view === 'facts') {
-    return <div>{store.view}</div>;
+    return <Facts state={store} />;
   } else if (store.view === 'voting') {
-    return <div>{store.view}</div>;
+    return <Voting state={store} />;
   } else {
-    return <div>kek</div>;
+    return <People />;
   }
 };
 

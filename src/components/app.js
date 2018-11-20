@@ -1,11 +1,13 @@
 import React from 'react';
-import VisibleTabs from '../containers/VisibleTabs';
 import Header from './header/index';
+import Body from '../containers/body';
+import Footer from '../containers/footer';
 
-const App = () => (
+const App = ({ state }) => (
   <div>
     <Header />
-    <VisibleTabs />
+    <Body />
+    <Footer />
   </div>
 );
 
